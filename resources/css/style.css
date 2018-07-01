@@ -1,0 +1,132 @@
+/* "Tamming" Box Model With Reset */
+
+html {
+  box-sizing: border-box;
+  font-size: 18px;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.container {max-width:960px;
+            margin: 0 auto;}
+
+body { font-family: helvetica;
+        color:white;
+      }
+h1 {font-size: 2rem;
+    font-weight: bold;}
+h5 {font-size: 1rem;
+    font-weight: bold;}
+#logo {background-color: black;}
+#logo .container {display: flex;
+                  flex-direction:row;
+                  padding: .66rem 0 .66rem .5rem;
+                  align-items: center;}
+#logo img {height: 1.5rem;
+          padding-right:1rem;}
+#main {background-image: url("./moto.jpeg");
+      background-position: center;
+      background-size: cover;
+      height:25rem;}
+
+#mainInfo {position: relative;
+          top: 9rem;
+          background-color: black;
+          padding:2rem 3rem;
+          width:20rem;}
+#mainInfo h1{padding-top:.25rem;}
+
+@media only screen and (max-width: 470px) {
+  #main {height:15rem;}
+  #mainInfo {top:10rem;
+            padding:1rem 2rem;
+            width:100%;}
+  h1 {font-size: 1rem;}
+  h5 {font-size:.77rem;}
+}
+#nav {background-color: firebrick;
+      padding: .75rem 0 .75rem 0;}
+
+#nav .container {display:flex;
+                flex-direction: row;
+                justify-content: space-between;}
+#nav .mobileN {display: none;}
+@media only screen and (max-width:1024px){
+  #nav .container {display: none;}
+  #nav .mobileN {display: block;
+              text-align: center;}
+}
+
+#products {background-color: white;
+          padding-top:3rem;}
+#products .container {display:flex;
+                      flex-direction: row;
+                      justify-content: space-between;}
+.product {border: solid black 4px;
+          width:30%;
+          display: flex;
+              flex-direction: column;
+              align-content: center;
+          }
+@media only screen and (max-width:1024px){
+  .product:last-of-type {display: none;}
+  .product {width:47%;}
+}
+.product .pI img {height:9rem;
+                  margin:2rem ;}
+.pI {    display:flex;
+      flex-direction: row;
+    justify-content:  center;}
+.pI img {max-width: 8rem;
+        display: flex;
+      flex-direction: row;
+    justify-content: center;}
+.product p {color:white;
+      background-color: black;
+      text-align: center;
+      padding: .5rem 0 .5rem 0;}
+
+#loc,#hours {width: 35%;
+              display:flex;
+              flex-direction: column;}
+#info .container {  padding-top:3rem;
+                    padding-bottom:4rem;
+                    display:flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    color:black;
+                  }
+
+ .title {background-color: black;
+        color:white;
+        padding:1rem 2rem;
+        margin-bottom:.2rem;}
+#footer { background-color: black;
+          color: white;
+          height: 5rem;
+
+          /* align-self: center;    <---- REMOVE */
+
+
+          }
+#footer span{align-self: flex-start;}
+#footer .container {
+  height: 5rem;
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  justify-content: center;
+
+  }
+@media only screen and (max-width: 470px) {
+    #p2 {display: none;}
+    #products .container {justify-content: center;
+                        }
+    #p1 {width:90%;}
+
+    #footer .container{text-align:center;}
+  #info .container {flex-wrap: wrap;
+                    justify-content: center;}
+    #loc,#hours {width:90%;}
+    #loc {padding-bottom: .5rem;}
